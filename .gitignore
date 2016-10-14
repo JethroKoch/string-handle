@@ -1,12 +1,57 @@
-*.class
+import java.util.Scanner;
+public class namelength{
+    public static void main(String[] args){
+        //namelength
+        String name = "";
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Please enter your name ");
+        name = sc.nextLine();
+        System.out.println("the length of your name is " + name.length());
+    
 
-# Mobile Tools for Java (J2ME)
-.mtj.tmp/
-
-# Package Files #
-*.jar
-*.war
-*.ear
-
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
-hs_err_pid*
+        //Postcodecapital
+        String postcode = "";
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Please enter your postocde ");
+        postcode = sc.nextLine();
+        System.out.print(postcode.toUpperCase());
+   
+        
+        //passwordcheck
+        String pass1 = ("");
+        String pass2 = ("");
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Please enter your password ");
+        pass1 = sc.nextLine();
+        System.out.print("please re-enter your password ");
+        pass2 = sc.nextLine();
+        while(!pass1.equals(pass2)){
+            System.out.println("passwords don't match");
+            System.out.print("Please enter your password ");
+            pass1 = sc.nextLine();
+            System.out.print("please re-enter your password ");
+            pass2 = sc.nextLine();
+        }
+        System.out.print("Passwords verified");
+        
+        //Initials
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Please enter your first, middle and last name");
+        String fullname = sc.nextLine();
+        int split1 = fullname.indexOf(" ");
+        int split2 = fullname.lastIndexOf(" ");
+        String firstname = fullname.substring(0, split1);
+        String middlename = fullname.substring(split1, split2);
+        String lastname = fullname.substring(split2, fullname.length());
+        System.out.println(firstname.toString().charAt(0) + middlename.toString().charAt(0) +lastname.toString().charAt(0));
+        
+        //hello name
+        String name  = "";
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Please enter your full name with a space inbetween: ");
+        name  = sc.nextLine();
+        int index = name.indexOf(" ");
+        int length = name.length();
+        System.out.println("Hello " + name.substring(index, length));
+    }
+}
